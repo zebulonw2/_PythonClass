@@ -31,16 +31,14 @@ for row in objFile:
     lstTable.append(dicRow)
 
 # -- Input/Output -- #
-# Display a menu of choices to the user
 while (True):
+# Display a menu of choices to the user
     print(strMenu)
     strChoice = str(input("Which option would you like to perform? [1 to 5] - "))
     print()  # adding a new line for looks
 
 # 1 - Show the current items in the table
     if strChoice.strip() == '1':
-        # for dicRow in lstTable:
-        #     print(dicRow["Priority"] + ": " + dicRow["Task"].strip())
         for row in lstTable:
             print(row["Priority"], row["Task"].strip(), sep=": ")
         print()
@@ -49,7 +47,7 @@ while (True):
     elif strChoice.strip() == '2':
         while True:
             strPriority = input("Task Priority: ")
-            strTask = input("Task Name: " )
+            strTask = input("Task Name: ")
             lstTable.append({"Priority": strPriority, "Task": strTask +"\n"})
             strChoice = input("Exit? Y/N: ")
             print()
@@ -66,8 +64,8 @@ while (True):
         print()
         strChoice = str(input('Which # would you like to remove? '))
         print()
-        popItem = lstTable.pop(int(strChoice))
-        print(popItem['Priority'] + ": " + popItem['Task'].strip() + " has been removed")
+        pop = lstTable.pop(int(strChoice))
+        print(pop['Priority'] + ": " + pop['Task'].strip() + " has been removed")
         print()
         continue
 
